@@ -101,7 +101,7 @@ function AddToCart() {
                py-5 px-5  xl:flex-row flex-col justify-center items-center  py-6 my-3">
                   <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                     <img
-                      src={`/public/${f.image}`}
+                      src={`/${f.image}`}
                       alt={f.name}
                       className="h-full w-full object-cover object-center"
                     />
@@ -167,7 +167,7 @@ function AddToCart() {
             rounded-md  w-[300px] xl:flex-row flex-col justify-center items-center  py-6">
               <div className="h-[120px]  mb-4  drop-shadow-lg  overflow-hidden rounded-md border border-gray-200">
                 <img
-                  src={`/public/${f.image}`}
+                  src={`/${f.image}`}
                   alt={f.name}
                   className="h-full w-full object-cover object-center"
                 />

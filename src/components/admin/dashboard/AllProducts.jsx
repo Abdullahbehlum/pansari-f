@@ -88,7 +88,7 @@ function AllProducts() {
                       <TableCell align="center">
                         <div className="flex flex-col justify-center items-center">
                           <img
-                            src={`/public/${p.image}`}
+                            src={`/${p.image}`}
                             alt={p.name}
                             className="w-[80px] object-cover"
                           />

@@ -35,7 +35,7 @@ function Categories() {
                     className="border-[#ececec] border flex justify-center items-center flex-col p-3"
                   >
                     <img
-                      src={`/public/${c.Categoryimage}`}
+                      src={`/${c.Categoryimage}`}
                       alt={c.Categoryname}
                       className="w-[100px] mb-1 object-cover"
                     />

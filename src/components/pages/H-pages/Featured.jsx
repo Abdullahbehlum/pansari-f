@@ -62,7 +62,7 @@ function Featured() {
                             to={`/products/${f._id}`}
                           >
                             <img
-                              src={`/public/${f.image}`}
+                              src={`/${f.image}`}
                               alt={f.name}
                               className={` object-cover ${f._id === "6683de99ee367e122bdb961c"
                                   ? "w-[85px]  "

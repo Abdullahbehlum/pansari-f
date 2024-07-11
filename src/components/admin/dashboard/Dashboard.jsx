@@ -166,7 +166,7 @@ function Dashboard() {
                         <TableCell align="center">
                           <div className="flex flex-col justify-center items-center">
                             <img
-                              src={`/public/${c.Categoryimage}`}
+                              src={`/${c.Categoryimage}`}
                               alt={c.Categoryname}
                               className="w-[80px] object-cover"
                             />

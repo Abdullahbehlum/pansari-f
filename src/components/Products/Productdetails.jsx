@@ -312,7 +312,7 @@ function Productdetails() {
         <div className="flex justify-around xl:flex-row flex-col py-12 xl:py-16 ">
           <div className="flex w-[320px] flex-col justify-center items-center  ">
             <img
-              src={`/public/${ProductData.image}`}
+              src={`/${ProductData.image}`}
               alt={ProductData.name}
               className={`  ${ProductData._id === "6683de99ee367e122bdb961c"
                 ? "w-[160px] xl:mb-4 mb-0"
@@ -322,7 +322,7 @@ function Productdetails() {
 
             <div className="relative xl:left-[-6em] left-2">
               <img
-                src={`/public/${ProductData.image}`}
+                src={`/${ProductData.image}`}
                 alt={ProductData.name}
                 className={`${ProductData._id === "6682653e1a17d33f8e872e89"
                   ? "w-[40px]"
@@ -492,7 +492,7 @@ function Productdetails() {
         <div className="flex flex-col justify-center items-center ">
           <div>
             <img
-              src={`/public/${ProductData.image}`}
+              src={`/${ProductData.image}`}
               alt={ProductData.name}
               className={`  ${ProductData._id === "6683de99ee367e122bdb961c"
                 ? "w-[100px]  "

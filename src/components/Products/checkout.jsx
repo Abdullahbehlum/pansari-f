@@ -307,7 +307,7 @@ function checkout() {
                 <li key={i} className="flex xl:flex-row flex-col justify-around items-center  py-6">
                   <div className="xl:h-20 xl:w-20 w-40 h-40 flex-shrink-0 overflow-hidden mr-1 rounded-md border border-gray-200">
                     <img
-                      src={`/public/${f.image}`}
+                      src={`/${f.image}`}
                       alt={f.name}
                       className="h-full w-full object-cover object-center "
                     />

@@ -32,18 +32,17 @@ function Login() {
       onSubmit: async (values) => {
         try {
           const { data: res } = await axios.post(`${BaseUrl}/api/v1/auth/signin`, values);
-          if (res?.token || req.user) {
-            toast.success(res.message);
-            {
-              res?.user.role === "admin" ?
-                navigate("/admin/dashboard") :
-                navigate("/profile")
-            }
 
-            await dispatch(LoginReducer({ token: res.token, userRole: res.user.role }));
-
-
+          toast.success(res.message);
+          {
+            res?.user.role === "admin" ?
+              navigate("/admin/dashboard") :
+              navigate("/profile")
           }
+
+          await dispatch(LoginReducer({ token: res.token, userRole: res.user.role }));
+
+
         } catch (error) {
           toast.error(error.response.data.error);
         }
