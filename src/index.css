@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+    /* user-select: none; */
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-lgreen
+}
+
+::-webkit-scrollbar-track {
+    background: #ccc;
+}
+
+hr {
+    border-top: 1px solid #ccc;
+}
+
+@layer base {
+    .nav-item li {
+        list-style: none;
+        padding: 6px;
+        display: inline-block;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .mb-hide {
+        @apply hidden xl:block md:block sm:block
+    }
+
+    .desk-hide {
+        @apply block xl:hidden md:hidden sm:hidden
+    }
+
+    .spirte-img {
+        background-image: url(./assets/images/sprite.png);
+        width: 35px;
+        height: 35px;
+        background-position: 0 -51px;
+        cursor: pointer;
+    }
+
+    .user-img {
+        background-image: url(./assets/images/sprite.png);
+        width: 35px;
+        height: 35px;
+        background-position: 0 -96px;
+        cursor: pointer;
+        @apply flex flex-col justify-center items-center
+    }
+
+    .banner_img {
+        background-image: url(./assets/images/suppliments_bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        @apply xl:py-[7em] py-5 px-5
+    }
+
+    .pansari_img {
+        background-image: url(./assets/images/beauty_bg.jpg);
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .Oil_img {
+        background-image: url(./assets/images/oils_bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .btn {
+        padding: 8px 22px;
+        @apply bg-lgreen text-white
+    }
+
+    .featured-banner {
+        padding: 10px 0px 20px 0px;
+        background: #b0e8e2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 9px;
+        height: 550px;
+        width: 280px;
+    }
+
+    .flex-container {
+        @apply flex justify-around items-center xl:flex-row md:flex-row sm:flex-row flex-col
+    }
+
+    .spirte-cod {
+        background: url(./assets/images/sprite.png) no-repeat top left;
+        background-position: 0 -141px;
+        height: 80px;
+        width: 100px;
+    }
+
+    .sprite.prem_quality {
+        background: url(./assets/images/sprite.png) no-repeat top left;
+        background-position: 0 -231px;
+        height: 80px;
+        width: 100px;
+    }
+
+    .sprite.money_back {
+        background: url(./assets/images/sprite.png) no-repeat top left;
+        background-position: 0 -321px;
+        height: 80px;
+        width: 100px;
+
+    }
+
+    .sprite.help_center {
+        background: url(./assets/images/sprite.png) no-repeat top left;
+        background-position: 0 -411px;
+        height: 80px;
+        width: 100px;
+
+    }
+
+    :where(.css-dev-only-do-not-override-zg0ahe).ant-menu-light.ant-menu-root.ant-menu-vertical {
+        border-inline-end: none;
+    }
+
+    .user-gradient-card{
+        background: linear-gradient(270deg,#4eda89,#1a9f53);
+    }
+    .user-gradient-card .user-icon {
+        background: linear-gradient(#27bf68,#1a9f53);
+        color: #89ecb3;
+    }    
+
+    :where(.css-dev-only-do-not-override-zg0ahe).ant-menu-light .ant-menu-item-selected{
+        @apply text-green-600 bg-transparent
+    }
+}
+
+.lines {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    padding: 7px;
+    color: #555;
+}
+
+.lines::after {
+    display: table;
+    content: "";
+}
+
+@media (max-width:800px) {
+
+    html,
+    body {
+        max-width: 100%;
+        max-height: 100%;
+        overflow-x: hidden !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 0px;
+    }
+}
+
+.pro-btn {
+    padding: 12px 12px;
+
+}
+
+@-moz-document url-prefix() {
+    html {
+        scrollbar-width: none;
+        overflow-x: hidden;
+    }
+
+
+}

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sign-image {
+    background: url(../../assets/images/customer_login.png), no-repeat;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    transition: 0.5s all ease;
+}
+
