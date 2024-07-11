@@ -94,7 +94,7 @@ function Herb() {
                            rounded-lg  border flex justify-center items-center flex-col`}
                               >
                                 <img
-                                  src={`/public/${e.image}`}
+                                  src={`/${e.image}`}
                                   alt="herb"
                                   className={` ${
                                     e.category == "supplements"
