@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Loading from "./components/loader/Loading";
 import { Skeleton } from "antd";
+import ProtectRoute from "./components/utils/ProtectRoute.jsx"
 function App() {
 
   // user routes
@@ -163,22 +164,8 @@ function App() {
         {/* Admin Layout  */}
 
         <Route
-
           element={
-            <Suspense
-              fallback={
-                <>
-                  <Loading />
-                </>
-              }
-            >
-              <AdminPannel />
-            </Suspense>
-          }
-        >
-          <Route
-            path="/admin/dashboard"
-            element={
+            <ProtectRoute role={"admin"}>
               <Suspense
                 fallback={
                   <>
@@ -186,106 +173,143 @@ function App() {
                   </>
                 }
               >
-                <Dashboard />
+                <AdminPannel />
               </Suspense>
+            </ProtectRoute>
+          }
+        >
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectRoute role={"admin"}>
+                <Suspense
+                  fallback={
+                    <>
+                      <Loading />
+                    </>
+                  }
+                >
+                  <Dashboard />
+                </Suspense>
+              </ProtectRoute>
+
             }
           />
           <Route
             path="admin/add-product"
             element={
-              <Suspense
-                fallback={
-                  <>
-                    <Skeleton />
-                  </>
-                }
-              >
-                <AddProduct />
-              </Suspense>
+              <ProtectRoute role={"admin"}>
+                <Suspense
+                  fallback={
+                    <>
+                      <Skeleton />
+                    </>
+                  }
+                >
+                  <AddProduct />
+                </Suspense>
+              </ProtectRoute>
+
             }
           />
           <Route
             path="admin/edit-product/:productid"
             element={
-              <Suspense
-                fallback={
-                  <>
-                    <Skeleton />
-                  </>
-                }
-              >
-                <AddProduct />
-              </Suspense>
+              <ProtectRoute role={"admin"}>
+
+                <Suspense
+                  fallback={
+                    <>
+                      <Skeleton />
+                    </>
+                  }
+                >
+                  <AddProduct />
+                </Suspense>
+              </ProtectRoute>
             }
           />
           <Route
             path="admin/all-product"
             element={
-              <Suspense
-                fallback={
-                  <>
-                    <Skeleton />
-                  </>
-                }
-              >
-                <AllProduct />
-              </Suspense>
+              <ProtectRoute role={"admin"}>
+                <Suspense
+                  fallback={
+                    <>
+                      <Skeleton />
+                    </>
+                  }
+                >
+                  <AllProduct />
+                </Suspense>
+              </ProtectRoute>
             }
           />
           <Route
             path="admin/add-category"
             element={
-              <Suspense
-                fallback={
-                  <>
-                    <Skeleton />
-                  </>
-                }
-              >
-                <AddCategory />
-              </Suspense>
+              <ProtectRoute role={"admin"}>
+
+                <Suspense
+                  fallback={
+                    <>
+                      <Skeleton />
+                    </>
+                  }
+                >
+                  <AddCategory />
+                </Suspense>
+              </ProtectRoute>
             }
           />
           <Route
             path="admin/add-category/:category"
             element={
-              <Suspense
-                fallback={
-                  <>
-                    <Skeleton />
-                  </>
-                }
-              >
-                <AddCategory />
-              </Suspense>
+              <ProtectRoute role={"admin"}>
+
+                <Suspense
+                  fallback={
+                    <>
+                      <Skeleton />
+                    </>
+                  }
+                >
+                  <AddCategory />
+                </Suspense>
+              </ProtectRoute>
             }
           />
           <Route
             path="admin/all-category"
             element={
-              <Suspense
-                fallback={
-                  <>
-                    <Skeleton />
-                  </>
-                }
-              >
-                <AllCategory />
-              </Suspense>
+              <ProtectRoute role={"admin"}>
+                <Suspense
+                  fallback={
+                    <>
+                      <Skeleton />
+                    </>
+                  }
+                >
+                  <AllCategory />
+                </Suspense>
+              </ProtectRoute>
             }
           />
           <Route
             path="admin/all-order"
             element={
-              <Suspense
-                fallback={
-                  <>
-                    <Skeleton />
-                  </>
-                }
-              >
-                <AllOrders />
-              </Suspense>
+              <ProtectRoute role={"admin"}>
+
+                <Suspense
+                  fallback={
+                    <>
+                      <Skeleton />
+                    </>
+                  }
+                >
+                  <AllOrders />
+                </Suspense>
+              </ProtectRoute>
             }
           />
           <Route

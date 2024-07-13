@@ -30,7 +30,7 @@ function checkout() {
     cities: "",
     zipcode: "",
     paymentType: SelectedPaymethod,
-    cartItems: [],
+
   });
   const SelectCitiesOption = [
     {
@@ -75,20 +75,6 @@ function checkout() {
     }
   }
 
-
-
-  const handleReset = () => {
-    SetOrderData({
-      fname: "",
-      lname: "",
-      email: "",
-      pnumber: "",
-      address1: "",
-      address2: "",
-      cities: "",
-      zipcode: "",
-    });
-  }
   // Pakistani Phone Number validation is given 
   const pakistanPhoneNumberRegex = /^03\d{9}$/;
   const addtoCart = useSelector((state) => state.cart.cart);
@@ -107,14 +93,7 @@ function checkout() {
     } else {
       setIsValid(false);
     }
-    SetOrderData((prevData) => ({
-      ...prevData,
-      cartItems: addtoCart.map((item) => ({
-        productid: item._id,
-        variant: SelectedVariant ? SelectedVariant.size : '',
-        price: SelectedVariant ? SelectedVariant.price : item.price,
-      })),
-    }));
+    
   }, [addtoCart, OrderData.pnumber, SelectedVariant]);
   const handlePaymentMethod = (paymenttype) => {
     SetSelectedPaymethod(paymenttype)
@@ -277,15 +256,7 @@ function checkout() {
               </div>
 
             </div>
-            <div className="flex justify-end xl:flex-row md:flex-row sm:flex-row  flex-col  ">
-              <button onClick={handleReset} className="btn border text-black border-logreen bg-transparent mb-3   rounded  mr-2 " >
-                Reset
-              </button>
-
-              <button onClick={() => SetAddressList(true)} className="btn  text-black bg-lgreen  text-white mb-3   rounded  mr-2 " >
-                Save
-              </button>
-            </div>
+           
 
           </form>
         </div>
@@ -321,6 +292,7 @@ function checkout() {
                       {f.variants.map((variant, index) => (
                         <label key={index} className="flex justify-center items-center mr-2">
                           <Radio
+                          
                             value={variant.size}
                             checked={SelectedVariant && SelectedVariant.size === variant.size}
                             onChange={(e) => handleVariantChange(e, f)}

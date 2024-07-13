@@ -64,7 +64,7 @@ function Featured() {
                             <img
                               src={`/${f.image}`}
                               alt={f.name}
-                              className={` object-cover ${f._id === "6683de99ee367e122bdb961c"
+                              className={` object-cover ${f._id === "6692334ab63a6fb89d6a5792"
                                   ? "w-[85px]  "
                                   : "w-[170px]"
                                 }`}

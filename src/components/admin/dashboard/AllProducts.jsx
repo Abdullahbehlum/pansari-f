@@ -18,7 +18,6 @@ import { BaseUrl } from "../../utils/BaseUrl.js"
 function AllProducts() {
   const [AllProducts, SetAllProducts] = useState([]);
   const [Loaded, SetLoaded] = useState(false);
-  const [DeleteProduct, SetDeleteProduct] = useState();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(3);
   const handlePageChange = (event, newPage) => {
@@ -48,10 +47,16 @@ function AllProducts() {
 
   const handleDeleteProduct = async (id) => {
     try {
+      const token = localStorage.getItem("auth");
       const { data: res } = await axios.delete(
-        `${BaseUrl}/api/v1/products/deleteproduct/${id}`
+        `${BaseUrl}/api/v1/products/deleteproduct/${id}`,
+        {
+          headers: {
+            Authorization:`Bearer ${token}`
+          }
+        }
       );
-      SetDeleteProduct((prevproducts) =>
+      SetAllProducts((prevproducts) =>
         prevproducts.filter((c) => c._id !== id)
       );
       toast.success(res.message);

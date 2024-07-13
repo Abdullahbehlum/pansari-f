@@ -43,12 +43,11 @@ function Sidebar({ isSidebarOpen, toggleSidebar }) {
       <Sider
         style={{
           backgroundColor: "white",
-          height: '100%',
-          maxHeight:"100em"
+          height:"100%"
         }}
         collapsed={isSidebarOpen}
         trigger={null}
-        className={` ${isSidebarOpen ? 'py-24' : 'py-12'} shadow-2xl`}
+        className={` ${isSidebarOpen ? 'py-24 ' : 'py-12'} shadow-2xl`}
       >
         {
           isSidebarOpen ? <>

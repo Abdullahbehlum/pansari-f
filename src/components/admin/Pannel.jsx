@@ -21,7 +21,7 @@ function AdminPannelLayout() {
           <AdminHeader isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
           <Content
             style={{ padding: "20px", backgroundColor: "transparent" }}
-          >
+            isSidebarOpen={isSidebarOpen}   >
             <Outlet />
           </Content>
           <Footer

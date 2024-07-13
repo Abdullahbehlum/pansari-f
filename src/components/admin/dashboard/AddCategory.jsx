@@ -1,5 +1,5 @@
 import { CloudUploadOutlined } from "@ant-design/icons";
-import "../../styles/FileInput.css";
+import "../../styles/Categoryinput.css";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -30,6 +30,8 @@ function AddCategory() {
         data: form,
         headers: {
           "Content-Type": "multipart/form-data",
+          "Authorization": `Bearer ${token}`
+
         },
       });
       console.log(response);
@@ -79,17 +81,19 @@ function AddCategory() {
             />
           </div>
 
-          <div className="flex justify-between xl:items-center xl:flex-row md:flex-row sm:flex-row flex-col xl:mb-6 mb-5">
+          <div className="flex justi xl:items-center xl:flex-row md:flex-row
+           sm:flex-row flex-col xl:mb-6 mb-5 xl:mr-10 mr-0">
             <p className="xl:mt-4 mb-2 font-semibold mr-3 text-[12px]">
               Category Image <span className="text-red-500">*</span>{" "}
             </p>{" "}
-            <div className="drop-file-input">
-              <div className="drop-file-input__label">
+            <div className="drop-file-input xl:ml-[-0.1em]" >
+              <div className="drop-file-input__label  " >
                 <CloudUploadOutlined className="text-[42px] text-[#333]" />
                 <p>Drag & Drop your files here</p>
               </div>
               <input
                 type="file"
+
                 name="imagecategory"
                 onChange={(e) => {
                   SetAddCategory({

@@ -53,10 +53,18 @@ function Pansaricodwidget() {
               </Link>
             </div>
             <div className="grid xl:grid-cols-3  grid-cols-1 gap-5 xl:mt-[6.9em]">
-              <img src={coco} className="w-[150px] object-cover" />
-              <img src={almod} className="w-[150px] object-cover" />
-              <img src={lavender} className="w-[150px] object-cover" />
-            </div>
+              <Link onClick={ScrollTop}
+                to={`/products/6686bd9d679ab05327ad1dcf`}>
+                <img src={coco} className="w-[150px] object-cover" />
+              </Link>
+              <Link to={`/products/6687955ed0b4191c2a0351d5`} onClick={ScrollTop}>
+                <img src={almod} className="w-[150px] object-cover" />
+              </Link>
+              <Link to={`/products/6687985fd0b4191c2a03521d`} onClick={ScrollTop}
+              >
+                <img src={lavender} className="w-[150px] object-cover" />
+
+              </Link>              </div>
           </div>
         </div>
       </section>

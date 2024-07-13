@@ -314,7 +314,7 @@ function Productdetails() {
             <img
               src={`/${ProductData.image}`}
               alt={ProductData.name}
-              className={`  ${ProductData._id === "6683de99ee367e122bdb961c"
+              className={`  ${ProductData._id === "6692334ab63a6fb89d6a5792"
                 ? "w-[160px] xl:mb-4 mb-0"
                 : "w-[650px]  xl:mb-3 mb-0"
                 } xl:mt-2 mt-0`}
@@ -324,7 +324,7 @@ function Productdetails() {
               <img
                 src={`/${ProductData.image}`}
                 alt={ProductData.name}
-                className={`${ProductData._id === "6682653e1a17d33f8e872e89"
+                className={`${ProductData._id === "6692334ab63a6fb89d6a5792"
                   ? "w-[40px]"
                   : "w-[80px]"
                   } `}
@@ -494,7 +494,7 @@ function Productdetails() {
             <img
               src={`/${ProductData.image}`}
               alt={ProductData.name}
-              className={`  ${ProductData._id === "6683de99ee367e122bdb961c"
+              className={`  ${ProductData._id === "6692334ab63a6fb89d6a5792"
                 ? "w-[100px]  "
                 : "w-[200px] object-contain  "
                 }`}

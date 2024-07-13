@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @apply  xl:w-[690px] w-[280px] xl:h-[200px] h-auto
+    @apply  xl:w-[780px] xl:ml-4 ml-0 w-[280px] xl:h-[200px] h-auto
 }
 
 .drop-file-input input {

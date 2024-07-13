@@ -32,16 +32,19 @@ function Login() {
       onSubmit: async (values) => {
         try {
           const { data: res } = await axios.post(`${BaseUrl}/api/v1/auth/signin`, values);
+          console.log(res);
+          if (res?.token) {
+            toast.success(res.message);
+            {
+              res?.user.role === "user" ?
+                navigate("/profile") :
+                navigate("/admin/dashboard")
+            }
 
-          toast.success(res.message);
-          {
-            res?.user.role === "admin" ?
-              navigate("/admin/dashboard") :
-              navigate("/profile")
+            const token = localStorage.setItem("auth", res?.token);
+            await dispatch(LoginReducer({ token: token, userRole: res.user.role }));
+
           }
-
-          await dispatch(LoginReducer({ token: res.token, userRole: res.user.role }));
-
 
         } catch (error) {
           toast.error(error.response.data.error);
@@ -121,7 +124,9 @@ function Login() {
               <button className=" p-[5px] bg-lgreen text-white w-full">
                 {"Sign in"}
               </button>
-
+              <div className="text-[12px] text-loggray text-center mt-2">
+                Don't have an account?  <Link className="hover:text-orange-600" to={"/signup"}>Sign Up</Link>
+              </div>
             </form>
           </div>
         </div>

@@ -47,8 +47,14 @@ function AllCategory() {
 
   const handleDeleteCategory = async (id) => {
     try {
+      const token = localStorage.getItem('auth');
       const { data: res } = await axios.delete(
-        `/api/v1/category/deleteCategory/${id}`
+        `/api/v1/category/deleteCategory/${id}`,
+        {
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        }
       );
       SetAllCategory((precategory) => precategory.filter((c) => c._id !== id));
       toast.success(res.message);

@@ -25,7 +25,7 @@ function Hero() {
       <section className="mb-5 mb-hide"></section>
 
       {/* Desktop Hero Section is given */}
-      <section className="mb-hide mb-12 my-8">
+      <section className=" hidden xl:block overflow-hidden mb-4 my-8">
         <div className=" grid grid-cols-3 overflow-hidden ">
           <div className="w-[100%] relative left-[40px]  *:mb-3">
             <Swiper
@@ -85,13 +85,15 @@ function Hero() {
             </ul>
           </div>
           <div className="relative left-[220px]  *:mb-3">
+          <Link onClick={ScrollTop}  to={"/products/66923241b63a6fb89d6a56f2"} className="mb-3">
             <img src={cb1} className="object-cover w-[284px]" />
+           </Link>
             <Link onClick={ScrollTop}  to={"/category-product/oil"} className="mb-3">
               <img src={cb5} className="object-cover w-[284px]" />
             </Link>
           </div>
           <div className="relative left-[92px] *:mb-3">
-           <Link to={`/products/6687ad28906a137e89fcc784`}>
+           <Link to={`/products/6692303bb63a6fb89d6a55e8`}>
            <img src={cb2} className="object-cover w-[287px] cursor-pointer" />
            </Link>
             <img
