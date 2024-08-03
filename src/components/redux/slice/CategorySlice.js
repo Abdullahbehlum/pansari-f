@@ -24,7 +24,8 @@ const CategorySlice = createSlice({
       state.success = Status.success;
     });
     builder.addCase(FetchAllCategory.rejected, (state) => {
-      state.loading = state.error;
+      state.loading =  null
+    ;
       state.error = Status.error;
     });
   },
